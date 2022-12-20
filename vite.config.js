@@ -6,6 +6,7 @@ const config = {
 	plugins: [sveltekit()],
 	optimizeDeps: {
 		esbuildOptions: {
+			target: 'esnext',
 			define: {
 				global: 'globalThis',
 			},
