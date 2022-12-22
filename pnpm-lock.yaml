@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@rollup/plugin-inject': ^5.0.3
   '@solana/buffer-layout': ^4.0.1
   '@solana/wallet-adapter-base': ^0.9.20
   '@solana/wallet-adapter-wallets': ^0.19.9
@@ -18,7 +19,7 @@ specifiers:
   prettier: ^2.8.0
   prettier-plugin-svelte: ^2.8.1
   rollup-plugin-node-polyfills: ^0.2.1
-  solana-tx-utils: ^0.0.6
+  solana-tx-utils: ^0.0.8
   svelte: ^3.54.0
   svelte-check: ^2.9.2
   tailwindcss: ^3.2.4
@@ -32,9 +33,10 @@ dependencies:
   '@solana/wallet-adapter-wallets': 0.19.9_@solana+web3.js@1.70.2
   '@solana/web3.js': 1.70.2
   '@svelte-on-solana/wallet-adapter-core': 1.0.11-alpha.0
-  solana-tx-utils: 0.0.6
+  solana-tx-utils: 0.0.8
 
 devDependencies:
+  '@rollup/plugin-inject': 5.0.3
   '@sveltejs/adapter-auto': 1.0.0_@sveltejs+kit@1.0.1
   '@sveltejs/kit': 1.0.1_svelte@3.55.0+vite@4.0.2
   '@typescript-eslint/eslint-plugin': 5.47.0_ncmi6noazr3nzas7jxykisekym
@@ -587,6 +589,34 @@ packages:
       bs58: 4.0.1
       eventemitter3: 4.0.7
     dev: false
+
+  /@rollup/plugin-inject/5.0.3:
+    resolution: {integrity: sha512-411QlbL+z2yXpRWFXSmw/teQRMkXcAAC8aYTemc15gwJRpvEVDQwoe+N/HTFD8RFG8+88Bme9DK2V9CVm7hJdA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@rollup/pluginutils': 5.0.2
+      estree-walker: 2.0.2
+      magic-string: 0.27.0
+    dev: true
+
+  /@rollup/pluginutils/5.0.2:
+    resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@types/estree': 1.0.0
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    dev: true
 
   /@socket.io/component-emitter/3.1.0:
     resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==}
@@ -1592,6 +1622,10 @@ packages:
 
   /@types/cookie/0.5.1:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
+    dev: true
+
+  /@types/estree/1.0.0:
+    resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: true
 
   /@types/json-schema/7.0.11:
@@ -3020,6 +3054,10 @@ packages:
 
   /estree-walker/0.6.1:
     resolution: {integrity: sha512-SqmZANLWS0mnatqbSfRP5g8OXZC12Fgg1IwNtLsyHDzJizORW4khDfjPqJZsemPWBB2uqykUah5YpQ6epsqC/w==}
+    dev: true
+
+  /estree-walker/2.0.2:
+    resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
     dev: true
 
   /esutils/2.0.3:
@@ -4628,8 +4666,8 @@ packages:
       - supports-color
     dev: false
 
-  /solana-tx-utils/0.0.6:
-    resolution: {integrity: sha512-dPtFLHRPWU+b0W5p3YLem94yb2dNvRNSFAvxrWa4x1wxAPF5U/K+6eN59b9DG82+q/ocnU5Xg+hs233PK6akAw==}
+  /solana-tx-utils/0.0.8:
+    resolution: {integrity: sha512-Vn1D7YBb3lnYj4WmZwC7VeenyWh6lg+wiJGJLM9YniCy77GGdBBr6eiUzw1Ux9ZfH0xu4YOFracRfqCm+3c2xg==}
     dependencies:
       '@solana/web3.js': 1.70.2
       node-fetch: 3.3.0
