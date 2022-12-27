@@ -63,17 +63,17 @@
 	}
 </script>
 
-<div class="w-full max-h-full bg-gray-900 rounded-xl pt-4 pb-10 grid grid-rows-[auto_1fr]">
+<div class="grid max-h-full w-full grid-rows-[auto_1fr] rounded-xl bg-gray-900 pt-4 pb-10">
 	<header class="flex items-center justify-between px-6">
-		<h2 class="text-gray-400 font-semibold text-xl">Accounts</h2>
+		<h2 class="text-xl font-semibold text-gray-400">Accounts</h2>
 
 		{#if $ALTState.data}
-			<div class="flex gap-2 items-center">
+			<div class="flex items-center gap-2">
 				<Button type="button" class="text-red-400 hover:bg-gray-800" on:click={deactivateALTAccount}
 					>Deactivate</Button
 				>
 				<button
-					class="w-10 h-10 p-1 text-red-400 hover:bg-gray-700 rounded-md"
+					class="h-10 w-10 rounded-md p-1 text-red-400 hover:bg-gray-700"
 					on:click={closeALTAccount}
 				>
 					<svg style="width: 100; height: 100%" viewBox="0 0 24 24" fill="none">
@@ -90,13 +90,13 @@
 	</header>
 
 	{#if $ALTState.isLoading}
-		<div class="w-full h-full flex items-center justify-center">
-			<div class="w-10 h-10 border-2 border-blue-500 border-b-blue-400 rounded-full animate-spin" />
+		<div class="flex h-full w-full items-center justify-center">
+			<div class="h-10 w-10 animate-spin rounded-full border-2 border-blue-500 border-b-blue-400" />
 		</div>
 	{:else if $ALTState.data}
-		<ul class="w-full h-full pl-6 flex flex-col gap-2 mt-3 overflow-y-auto">
+		<ul class="mt-3 flex h-full w-full flex-col gap-2 overflow-y-auto pl-6">
 			{#each $ALTState.data.state.addresses as accountAddress, i}
-				<li data-code class="text-gray-300 font-medium text-base">
+				<li data-code class="text-base font-medium text-gray-300">
 					<span class="mr-2 text-gray-500" data-code>{i + 1}.</span>{accountAddress.toString()}
 				</li>
 			{/each}

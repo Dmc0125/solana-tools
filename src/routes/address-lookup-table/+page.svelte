@@ -77,17 +77,19 @@
 	}
 </script>
 
-<header class="w-full flex items-center justify-center gap-4 mt-8 mb-6">
+<!-- <header class="w-full flex items-center justify-center gap-4 mt-8 mb-6">
 	{#each actions as action}
 		<button
 			class="text-gray-400 hover:text-blue-500 text-base font-medium"
 			on:click={() => (view = action)}>{action[0].toUpperCase()}{action.slice(1)}</button
 		>
 	{/each}
-</header>
+</header> -->
 
-{#if view === 'create'}
-	<main class="max-w-[500px] w-full mx-auto bg-gray-700 rounded-md">
+<!-- <main class="w-full bg-gray-700 ">dfasd</main> -->
+
+<!-- {#if view === 'create'}
+	<main class="max-w-[500px] w-full mx-auto bg-gray-800 rounded-md">
 		<AltCreate />
 	</main>
 {:else}
@@ -114,4 +116,4 @@
 
 		<AltManager />
 	</main>
-{/if}
+{/if} -->

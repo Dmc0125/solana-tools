@@ -72,13 +72,13 @@
 </script>
 
 <form on:submit|preventDefault class="p-6">
-	<h2 class="text-gray-200 font-semibold text-lg mb-3">Create Address Lookup Table</h2>
+	<h2 class="mb-3 text-lg font-semibold text-gray-200">Create Address Lookup Table</h2>
 	<div class="flex flex-col gap-4">
 		{#each altAccountAddresses as accountAddress, i}
 			<Input label="Account address" id="account-addr-{i}" bind:value={accountAddress} />
 		{/each}
 	</div>
-	<Button type="button" class="bg-blue-500 font-medium mt-4 ml-auto block" on:click={createALT}
+	<Button type="button" class="mt-4 ml-auto block bg-blue-500 font-medium" on:click={createALT}
 		>Create ALT</Button
 	>
 </form>

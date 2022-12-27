@@ -8,14 +8,14 @@
 
 <div class="flex flex-col">
 	{#if !hideLabel}
-		<label for={id.length ? id : label} class="text-[.95rem] text-gray-400 font-semibold mb-1"
+		<label for={id.length ? id : label} class="mb-1 text-[.95rem] font-semibold text-gray-400"
 			>{label}</label
 		>
 	{/if}
 	<input
 		type="text"
 		id={id.length ? id : label}
-		class="bg-gray-800 text-gray-200 h-10 w-full rounded-md px-4 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+		class="h-10 w-full rounded-md bg-gray-800 px-4 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
 		{placeholder}
 		bind:value
 	/>
