@@ -1,79 +1,39 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores'
-	import { walletStore, initialize } from '@svelte-on-solana/wallet-adapter-core'
-	import { onMount } from 'svelte'
-
-	import Button from '$lib/components/Button.svelte'
+	import { walletStore } from '@svelte-on-solana/wallet-adapter-core'
 
 	import '../app.css'
+	import HeaderMobile from './HeaderMobile.svelte'
 
 	const links = [
-		{ name: 'Account parser', path: '/' },
-		{ name: 'Address lookup table', path: '/address-lookup-table' },
+		{ name: 'Account parser', path: '/', isActive: (pathname: string) => pathname === '/' },
+		{
+			name: 'Address lookup table',
+			path: '/address-lookup-table',
+			isActive: (pathname: string) => pathname.includes('/address-lookup-table'),
+		},
 	]
-
-	// onMount(async () => {
-	// 	const { SolflareWalletAdapter, SolflareWalletName } = await import(
-	// 		'@solana/wallet-adapter-wallets'
-	// 	)
-
-	// 	initialize({
-	// 		wallets: [new SolflareWalletAdapter()],
-	// 		autoConnect: false,
-	// 		localStorageKey: 'walletAdapter',
-	// 		onError: (err) => {
-	// 			console.log({ err })
-	// 		},
-	// 	})
-
-	// 	$walletStore.select(SolflareWalletName)
-	// })
-
-	// const handleWalletButton = async () => {
-	// 	try {
-	// 		if ($walletStore.connected) {
-	// 			await $walletStore.disconnect()
-	// 		} else {
-	// 			await $walletStore.connect()
-	// 		}
-	// 	} catch (error) {
-	// 		console.log('Could not connect wallet')
-	// 	}
-	// }
 </script>
 
-<header class="flex w-full items-center justify-between py-5 px-[10%]">
-	<nav class="w-fit">
-		<ul class="flex gap-8">
-			{#each links as { name, path }}
-				<li class="text-base font-medium text-gray-300">
+<HeaderMobile />
+
+<!-- <header class="flex w-full items-center justify-between py-5 px-5">
+	<nav class="w-fit ml-auto">
+		<ul class="flex gap-4">
+			{#each links as { name, path, isActive }}
+				<li class="text-[.95rem] font-medium">
 					<a
 						href={path}
 						data-sveltekit-preload-data
-						class="hover:text-red-400 {$page.url.pathname.endsWith(path)
-							? 'text-red-300 underline underline-offset-4'
-							: ''}">{name}</a
+						class="
+							{isActive($page.url.pathname) ? 'text-gray-200' : 'text-gray-400'}
+						">{name}</a
 					>
 				</li>
 			{/each}
 		</ul>
 	</nav>
-
-	<div class="flex">
-		{#if $walletStore.connected}
-			<div class="mr-4 flex items-center gap-2">
-				<span class="text-base text-gray-200">
-					{$walletStore.wallet?.name}
-				</span>
-				<img
-					class="h-8 w-8"
-					src={$walletStore.wallet?.icon}
-					alt="{$walletStore.wallet?.name} icon"
-				/>
-			</div>
-		{/if}
-	</div>
-</header>
+<!-- </header> -->
 
 <slot />
 

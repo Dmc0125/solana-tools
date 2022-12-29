@@ -21,8 +21,8 @@
 
 <SelectWallet bind:show={showSelectWalletMenu} />
 
-<main class="w-full px-5">
-	<header class="flex w-full items-center justify-between">
+<main class="w-full grid grid-rows-[auto_1fr]">
+	<header class="flex w-full px-5 items-center justify-between">
 		<nav class="w-full py-5">
 			<ul class="flex items-center gap-1">
 				{#each ALTActions as { name, path }}

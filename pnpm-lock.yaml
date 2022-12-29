@@ -19,7 +19,7 @@ specifiers:
   prettier: ^2.8.0
   prettier-plugin-svelte: ^2.8.1
   rollup-plugin-node-polyfills: ^0.2.1
-  solana-tx-utils: ^0.0.8
+  solana-tx-utils: ^0.0.9
   svelte: ^3.54.0
   svelte-check: ^2.9.2
   tailwindcss: ^3.2.4
@@ -33,7 +33,7 @@ dependencies:
   '@solana/wallet-adapter-wallets': 0.19.9_@solana+web3.js@1.70.2
   '@solana/web3.js': 1.70.2
   '@svelte-on-solana/wallet-adapter-core': 1.0.11-alpha.0
-  solana-tx-utils: 0.0.8
+  solana-tx-utils: 0.0.9
 
 devDependencies:
   '@rollup/plugin-inject': 5.0.3
@@ -4666,8 +4666,8 @@ packages:
       - supports-color
     dev: false
 
-  /solana-tx-utils/0.0.8:
-    resolution: {integrity: sha512-Vn1D7YBb3lnYj4WmZwC7VeenyWh6lg+wiJGJLM9YniCy77GGdBBr6eiUzw1Ux9ZfH0xu4YOFracRfqCm+3c2xg==}
+  /solana-tx-utils/0.0.9:
+    resolution: {integrity: sha512-hlfZSaJE0FeOm4mh+FsTnagK1l2ESENrDlLvBw5m5AHXHY2jL90l9TreRicEpavtkrv6lj7K/MnIJOo7J9O6ng==}
     dependencies:
       '@solana/web3.js': 1.70.2
       node-fetch: 3.3.0
